@@ -1,0 +1,25 @@
+{
+  "name": "whatsapp-chat-viewer",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njs31/whatsapp-chat-viewer.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "check": "node --experimental-strip-types --test src/parse.test.ts",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name whatsapp-chat-viewer --branch main --commit-dirty=true"
+  },
+  "dependencies": {
+    "fflate": "^0.8.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "wrangler": "^4.45.3"
+  }
+}
